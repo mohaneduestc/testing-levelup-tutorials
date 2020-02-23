@@ -2,6 +2,7 @@ import {add, total} from './App'
 
 console.log(add(1,2))
 
+const add = jest.fn(()=>3)
 
 
 test('add',()=>{
@@ -9,6 +10,7 @@ test('add',()=>{
     // expect(value).toBe(3);
     expect(add(1,2)).toBe(3);
     expect(add(5,2)).toBe(7);
+    expect(add).toHaveBeenCalledTimes(2)
 }); 
 
 test('total', ()=>{
